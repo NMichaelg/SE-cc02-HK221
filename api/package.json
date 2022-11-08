@@ -1,0 +1,21 @@
+{
+  "name": "uwc_2.0_api",
+  "version": "1.0.0",
+  "description": "API for uwc 2.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon --inspect server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "khoaphamce",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.18.2",
+    "mysql2": "^2.0.2",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.25.5"
+  }
+}

@@ -1,1 +1,3 @@
-#Task 5 SE
+# How to run and start development
+
+## Installation
