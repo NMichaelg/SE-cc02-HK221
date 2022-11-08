@@ -33,9 +33,6 @@ services:
     networks:
       - backend
       - frontend
-    volumes:
-      - ./api/server.js:/api/server.js
-      - ./api/app/:/api/app/
 
   ui:
     depends_on:
