@@ -22,5 +22,5 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to UWC 2.0" });
+  res.json({ message: "Welcome to UWC hehe !!" });
 });
