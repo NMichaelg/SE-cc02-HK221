@@ -30,10 +30,10 @@ Install docker-desktop
 Type in terminal (inside the repo directory) these line:
 
 ### Window
-    docker compose up -d
+    docker compose up -d --build
 
 ### Linux
-    docker-compose up -d
+    docker-compose up -d --build
 
 
 ## Development
