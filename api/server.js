@@ -4,6 +4,8 @@ const cors = require("cors");
 
 const app = express();
 
+console.log("Test change");
+
 var corsOptions = {
   origin: process.env.CLIENT_ORIGIN || "http://localhost:8081"
 };
@@ -22,5 +24,5 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to UWC 2.0" });
+  res.json({ message: "Welcome to UWC hehe 2.0 !!" });
 });

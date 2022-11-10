@@ -28,7 +28,7 @@ services:
     environment:
       - DB_HOST=mysqldb
       - DB_USER=$MYSQLDB_USER
-      - DB_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - DB_PASSWORD=$MYSQLDB_PASSWORD
       - DB_NAME=$MYSQLDB_DATABASE
       - DB_PORT=$MYSQLDB_DOCKER_PORT
       - CLIENT_ORIGIN=$CLIENT_ORIGIN
@@ -37,6 +37,9 @@ services:
       - frontend
     volumes:
       - ./api:/api
+      - /api/node_modules
+
+    # command: /api/scripts/pre_start.sh
 
   ui:
     depends_on:
@@ -50,7 +53,10 @@ services:
     networks:
       - frontend 
     volumes:
-      - ./ui:/ui 
+      - ./ui:/ui
+      - /ui/node_modules
+
+    # command: /ui/scripts/pre_start.sh
 
 volumes: 
   db:
