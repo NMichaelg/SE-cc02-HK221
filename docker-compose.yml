@@ -36,8 +36,8 @@ services:
       - backend
       - frontend
     volumes:
-      - ./api/server.js:/api/server.js
-      - ./api/app:/api/app
+      - ./api:/api
+      - /api/node_modules
 
     # command: /api/scripts/pre_start.sh
 
@@ -53,9 +53,8 @@ services:
     networks:
       - frontend 
     volumes:
-      - ./ui/server.js:/ui/server.js
-      - ./ui/src:/ui/src
-      - ./ui/public:/ui/public
+      - ./ui:/ui
+      - /ui/node_modules
 
     # command: /ui/scripts/pre_start.sh
 
