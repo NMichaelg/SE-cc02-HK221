@@ -4,6 +4,7 @@
 ### Window
 Install docker-desktop
 
+
 ### Linux
 1. Install docker and do post-installation step: https://docs.docker.com/engine/install/linux-postinstall/ 
 2. Install docker-compose
