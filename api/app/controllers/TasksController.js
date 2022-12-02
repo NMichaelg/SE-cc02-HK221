@@ -1,4 +1,4 @@
-// fs = require("fs");
+fs = require("fs");
 
 // var task_db_path = "./app/database/tasks_info.js"
 // var task_db = JSON.parse(fs.readFileSync(task_db_path));
@@ -28,7 +28,10 @@ class TasksController{
             }
           );
     }
-
+    calendar_page(req,res,next){
+      var user_list = JSON.parse(fs.readFileSync('./app/database/user_info.json'));
+      res.send(user_list);
+    }
 }
 
 module.exports = new TasksController();

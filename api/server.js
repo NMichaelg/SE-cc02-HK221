@@ -6,6 +6,7 @@ const app = express();
 
 const port = 6868;
 
+const TaskControl = require("./app/controllers/TasksController.js")
 // var corsOptions = {
 //   origin: process.env.CLIENT_ORIGIN || "http://localhost:8081"
 // };
@@ -23,11 +24,7 @@ const db = require("./app/models");
 db.sequelize.sync();
 
 // simple route
-app.get("/", (req, res) => {
-  // res.json({ "message": "Welcome to UWC hehe 2.0 !!" });
-  res.send("hehehe");
-
-});
+app.get("/calendar", TaskControl.calendar_page);
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 app.listen(PORT, () => {
