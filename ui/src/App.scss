@@ -1,0 +1,9 @@
+.App{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+    .calendar-page{
+        flex: 6;
+    }
+}
