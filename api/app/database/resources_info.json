@@ -1,0 +1,19 @@
+{
+    "trucks":[
+        "Toyota-1",
+        "Toyota-2",
+        "Toyota-3",
+        "Lamborgini-1",
+        "Lamborgini-2",
+        "Lamborgini-3"
+    ],
+
+    "trollers":[
+        "Toto-1",
+        "Toto-2",
+        "Toto-3",
+        "Kiki-1",
+        "Kiki-2",
+        "Kiki-3"
+    ]
+}

@@ -1,0 +1,161 @@
+{
+    "all_days_tasks":
+    [
+        {
+            "date": "12/12/2022",
+            "all_tasks_detail":  [
+                {
+                    "team_id": 1,
+                    "members": [
+                        "Khoa Pham",
+                        "Phuoc"
+                    ],
+                    "leader": "Viet Phuong",
+                    "shift":{
+                        "start_time": "18:30:00",
+                        "end_time": "21:00:00"
+                    },
+                    "resources": {
+                        "trucks": ["Toyota-1", "Toyota-2"],
+                        "trollers": ["Toto-1", "Toto-2"]
+                    },
+                    "area_info":[
+                        {
+                            "district": "Tan Binh",
+                            "ward": "15",
+                            "mcps": [
+                                "TB1",
+                                "TB2",
+                                "TB3"
+                            ]
+                        },
+                        {
+                            "district": "Phu Nhuan",
+                            "ward": "2",
+                            "mcps": [
+                                "PN1",
+                                "PN2",
+                                "PN3"
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "team_id": 2,
+                    "members": [
+                        "An",
+                        "Man"
+                    ],
+                    "leader": "Saitama",
+                    "shift":{
+                        "start_time": "21:30:00",
+                        "end_time": "01:00:00"
+                    },
+                    "resources": {
+                        "trucks": ["Lambogini-1", "Lambogini-2"],
+                        "trollers": ["Kiki-1", "Kiki-2"]
+                    },
+                    "area_info":[
+                        {
+                            "district": "Tan Binh",
+                            "ward": "15",
+                            "mcps": [
+                                "TB1",
+                                "TB2",
+                                "TB3"
+                            ]
+                        },
+                        {
+                            "district": "Phu Nhuan",
+                            "ward": "2",
+                            "mcps": [
+                                "PN1",
+                                "PN2",
+                                "PN3"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "13/12/2022",
+            "all_tasks_detail":  [
+                {
+                    "team_id": 1,
+                    "members": [
+                        "Khoa Pham",
+                        "Phuoc"
+                    ],
+                    "leader": "Viet Phuong",
+                    "shift":{
+                        "start_time": "18:30:00",
+                        "end_time": "21:00:00"
+                    },
+                    "resources": {
+                        "trucks": ["Toyota-1", "Toyota-2"],
+                        "trollers": ["Toto-1", "Toto-2"]
+                    },
+                    "area_info":[
+                        {
+                            "district": "Tan Binh",
+                            "ward": "15",
+                            "mcps": [
+                                "TB1",
+                                "TB2",
+                                "TB3"
+                            ]
+                        },
+                        {
+                            "district": "Phu Nhuan",
+                            "ward": "2",
+                            "mcps": [
+                                "PN1",
+                                "PN2",
+                                "PN3"
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "team_id": 2,
+                    "members": [
+                        "An",
+                        "Man"
+                    ],
+                    "leader": "Saitama",
+                    "shift":{
+                        "start_time": "21:30:00",
+                        "end_time": "01:00:00"
+                    },
+                    "resources": {
+                        "trucks": ["Lambogini-1", "Lambogini-2"],
+                        "trollers": ["Kiki-1", "Kiki-2"]
+                    },
+                    "area_info":[
+                        {
+                            "district": "Tan Binh",
+                            "ward": "15",
+                            "mcps": [
+                                "TB1",
+                                "TB2",
+                                "TB3"
+                            ]
+                        },
+                        {
+                            "district": "Phu Nhuan",
+                            "ward": "2",
+                            "mcps": [
+                                "PN1",
+                                "PN2",
+                                "PN3"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

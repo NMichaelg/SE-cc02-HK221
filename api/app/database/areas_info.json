@@ -1,0 +1,20 @@
+[
+    {
+        "district": "Tan Binh",
+        "ward": "15",
+        "mcps": [
+            "TB1",
+            "TB2",
+            "TB3"
+        ]
+    },
+    {
+        "district": "Phu Nhuan",
+        "ward": "2",
+        "mcps": [
+            "PN1",
+            "PN2",
+            "PN3"
+        ]
+    }
+]

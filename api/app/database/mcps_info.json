@@ -1,0 +1,26 @@
+[
+    {
+        "name": "TB1",
+        "capacity": 0.6
+    },
+    {
+        "name": "TB2",
+        "capacity": 0.3
+    },
+    {
+        "name": "TB3",
+        "capacity": 0.8
+    },
+    {
+        "name": "PN1",
+        "capacity": 0.1
+    },
+    {
+        "name": "PN2",
+        "capacity": 0.8
+    },
+    {
+        "name": "PN3",
+        "capacity": 0.2
+    }
+]
