@@ -14,9 +14,7 @@ function App() {
         <Routes>
           <Route path='/'>
             <Route index element={<Navigate to="/calendar" />} />
-            <Route path='calendar' element={<MontlyView />}>
-
-            </Route>
+            <Route path='calendar' element={<MontlyView />}></Route>
             <Route path='teams' element={<MultipleTeams />}></Route>
             <Route path='resources' element={<MultipleVehicle />}></Route>
             <Route path='areas' element={<MultipleAreas />}></Route>

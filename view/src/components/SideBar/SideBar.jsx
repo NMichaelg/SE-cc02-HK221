@@ -6,6 +6,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GroupsIcon from '@mui/icons-material/Groups';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PinDropIcon from '@mui/icons-material/PinDrop';
+import {Link} from 'react-router-dom';
 
 function SideBar() {
     return (
@@ -46,32 +47,30 @@ function SideBar() {
                 <div className="center-widget widget">
                     <ul className='menu'>
                         <li className='menu-row-wrapper'>
-                            <div className="menu-row  active">
-                                <CalendarMonthIcon className='menu-icon' fontSize='medium'></CalendarMonthIcon>
-                                <span className="menu-title">Calendar</span>
-                            </div>
-
+                            <Link to="/calendar" className = 'menu-row  active'>
+                               
+                                    <CalendarMonthIcon className='menu-icon' fontSize='medium'></CalendarMonthIcon>
+                                    <span className="menu-title">Calendar</span>
+                                
+                            </Link>
                         </li>
                         <li className='menu-row-wrapper'>
-                            <div className="menu-row">
-                                <GroupsIcon className='menu-icon' fontSize='medium'></GroupsIcon>
-                                <span className="menu-title">Teams</span>
-                            </div>
-
+                            <Link to="/teams" className = 'menu-row'>
+                                    <GroupsIcon className='menu-icon' fontSize='medium'></GroupsIcon>
+                                    <span className="menu-title">Teams</span>
+                            </Link>
                         </li>
                         <li className='menu-row-wrapper'>
-                            <div className="menu-row">
-                                <LocalShippingIcon className='menu-icon' fontSize='medium'></LocalShippingIcon>
-                                <span className="menu-title">Vehicles</span>
-                            </div>
-
+                            <Link to="/resources" className = 'menu-row'>
+                                    <LocalShippingIcon className='menu-icon' fontSize='medium'></LocalShippingIcon>
+                                    <span className="menu-title">Vehicles</span>
+                            </Link>
                         </li>
                         <li className='menu-row-wrapper'>
-                            <div className="menu-row">
-                                <PinDropIcon className='menu-icon' fontSize='medium'></PinDropIcon>
-                                <span className="menu-title">Areas</span>
-                            </div>
-
+                            <Link to="/areas" className = 'menu-row'>
+                                    <PinDropIcon className='menu-icon' fontSize='medium'></PinDropIcon>
+                                    <span className="menu-title">Areas</span>
+                            </Link>
                         </li>
                     </ul>
                 </div>
