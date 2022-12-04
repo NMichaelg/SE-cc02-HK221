@@ -1,0 +1,19 @@
+[
+    {
+        "team_id": 1,
+        "members": [
+            "Khoa Pham",
+            "Phuoc"
+        ],
+        "leader": "Viet Phuong"
+    },
+
+    {
+        "team_id": 2,
+        "members": [
+            "An",
+            "Man"
+        ],
+        "leader": "Saitama"
+    }
+]
