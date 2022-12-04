@@ -8,7 +8,7 @@ function MultipleTeams() {
         <div className='teams page'>
             <SideBar />
             <div className="content-container">
-                Teams page
+                Multiple Team page
             </div>
         </div>
     )
