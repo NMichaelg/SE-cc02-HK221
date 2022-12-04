@@ -25,7 +25,7 @@ console.log(__dirname);
 app.get("/calender", taskController.calendar_page);
 app.get("/", taskController.calendar_page);
 app.get("/home", taskController.calendar_page);
-
+app.get("/one-day-multi-task", taskController.one_day);
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
