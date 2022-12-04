@@ -22,8 +22,7 @@ db.sequelize.sync();
 
 console.log(__dirname);
 
-app.get("/calender", taskController.calendar_page);
-app.get("/one-day-multi-task", taskController.one_day)
+app.get("/mcp-detail", taskController.MCP_detail);
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
