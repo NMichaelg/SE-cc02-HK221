@@ -22,7 +22,10 @@ db.sequelize.sync();
 
 console.log(__dirname);
 
-app.get("/calendar", taskController.calendar_page);
+app.get("/calender", taskController.calendar_page);
+app.get("/", taskController.calendar_page);
+app.get("/home", taskController.calendar_page);
+
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
