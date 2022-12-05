@@ -1,0 +1,19 @@
+
+
+
+        .parent{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            .b1{
+                flex: 1;
+                background-color: aqua;
+            }
+            
+            .b2{
+                flex: 1;
+                background-color: antiquewhite;
+            }
+        }

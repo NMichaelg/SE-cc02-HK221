@@ -22,3 +22,19 @@ SideBar
 BreadCrumbs
     - Props: CurrentUrl (BreadCrumbs)
     - Render: BreadCrumbs
+
+
+Update: 
+    - 1 Team
+    - 1 Task
+
+Delete:
+    - 1 Team
+    - Task
+
+Create:
+    - 1 Team
+    - Task
+
+MCP phải có địa chỉ để routing
+

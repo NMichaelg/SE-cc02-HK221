@@ -7,7 +7,7 @@ import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
 const routes = [
   { path: "/calendar", breadcrumb: "Month" },
-  { path: "/calendar/day/:dayth", breadcrumb: "Tasks 1 Day" },
+  { path: "/calendar/day/:dayth", breadcrumb: "Tasks-1-Day" },
   { path: "/calendar/day/:dayth/task/:taskId", breadcrumb: "Task"},
   { path: "/teams", breadcrumb: "Teams" },
   { path: "/teams/:teamId", breadcrumb: "Team" },
