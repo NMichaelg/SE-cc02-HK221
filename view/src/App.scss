@@ -1,0 +1,11 @@
+.App{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #F8F8F8;
+
+    .calendar-page{
+        flex: 6;
+    }
+}
