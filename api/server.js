@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
+const taskController = require("./app/controllers/TasksController");
+
 const app = express();
 
 const port = 6868;
@@ -21,7 +23,10 @@ db.sequelize.sync();
 
 console.log(__dirname);
 
-app.get("/mcp-detail", MCPController.MCP_detail);
+app.get("/calender", taskController.calendar_page);
+app.get("/", taskController.calendar_page);
+app.get("/home", taskController.calendar_page);
+app.get("/one-day-multi-task", taskController.one_day);
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
