@@ -2,8 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-const taskController = require("./app/controllers/TasksController");
-
 const app = express();
 
 const port = 6868;
@@ -14,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
+const MCPController = require("./app/controllers/MCPController");
 
 db.sequelize.sync();
 
@@ -22,7 +21,7 @@ db.sequelize.sync();
 
 console.log(__dirname);
 
-app.get("/mcp-detail", taskController.MCP_detail);
+app.get("/mcp-detail", MCPController.MCP_detail);
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
