@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 
 const taskController = require("./app/controllers/TasksController");
+const VehicleControl = require("./app/controllers/VehicleController");
 const areaController = require("./app/controllers/AreasController");
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
+const MCPController = require("./app/controllers/MCPController");
 
 db.sequelize.sync();
 
@@ -27,6 +29,9 @@ console.log(__dirname);
 app.get("/", taskController.calendar_page);
 app.get("/home", taskController.calendar_page);
 app.get("/calender", taskController.calendar_page);
+
+// Vehicle
+app.get("/vehicle-info",VehicleControl.Vehicle_info);
 
 // Return multiple task
 app.get("/one-day-multi-task", taskController.one_day)
