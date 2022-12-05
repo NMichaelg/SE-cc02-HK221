@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
+const MCPController = require("./app/controllers/MCPController");
 
 db.sequelize.sync();
 
