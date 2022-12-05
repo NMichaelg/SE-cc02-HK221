@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-const taskControl = require("./app/controllers/TasksController");
+const VehicleControl = require("./app/controllers/VehicleController");
 
 const app = express();
 
@@ -22,7 +22,7 @@ db.sequelize.sync();
 
 console.log(__dirname);
 
-app.get("/vehicle-info",taskControl.Vehicle_info);
+app.get("/vehicle-info",VehicleControl.Vehicle_info);
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
