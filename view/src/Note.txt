@@ -1,0 +1,24 @@
+################################
+### CONTAINER (các page) #######
+
+MonthlyView
+    - Props: none
+    - State:
+        + CurrentUrl 
+    -Render:
+        + SideBar: state CurrentUrl
+        + BreadCrumbs: state CurrentUrl
+        + Calendar
+
+
+
+################################
+######### COMPONENT  ###########
+
+SideBar
+    - Props: CurrentUrl (active Item)
+    - Render: SideBar
+
+BreadCrumbs
+    - Props: CurrentUrl (BreadCrumbs)
+    - Render: BreadCrumbs

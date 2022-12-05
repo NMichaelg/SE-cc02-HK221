@@ -6,9 +6,15 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GroupsIcon from '@mui/icons-material/Groups';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PinDropIcon from '@mui/icons-material/PinDrop';
-import {Link} from 'react-router-dom';
+import {NavLink, useLocation} from 'react-router-dom';
+
+const setActive = function(path, curPath){
+    return curPath == path ? "active" : "";
+}
 
 function SideBar() {
+    const curPath = useLocation().pathname;
+
     return (
         <div className='sidebar'>
             <div className="top">
@@ -47,30 +53,30 @@ function SideBar() {
                 <div className="center-widget widget">
                     <ul className='menu'>
                         <li className='menu-row-wrapper'>
-                            <Link to="/calendar" className = 'menu-row  active'>
+                            <NavLink to="/calendar" className = {'menu-row ' + setActive("/calendar", curPath)}>
                                
                                     <CalendarMonthIcon className='menu-icon' fontSize='medium'></CalendarMonthIcon>
                                     <span className="menu-title">Calendar</span>
                                 
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='menu-row-wrapper'>
-                            <Link to="/teams" className = 'menu-row'>
+                            <NavLink to="/teams" className = {'menu-row ' + setActive("/teams", curPath)}>
                                     <GroupsIcon className='menu-icon' fontSize='medium'></GroupsIcon>
                                     <span className="menu-title">Teams</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='menu-row-wrapper'>
-                            <Link to="/resources" className = 'menu-row'>
+                            <NavLink to="/resources" className = {'menu-row ' + setActive("/resources", curPath)}>
                                     <LocalShippingIcon className='menu-icon' fontSize='medium'></LocalShippingIcon>
                                     <span className="menu-title">Vehicles</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='menu-row-wrapper'>
-                            <Link to="/areas" className = 'menu-row'>
+                            <NavLink to="/areas" className = {'menu-row ' + setActive("/areas", curPath)}>
                                     <PinDropIcon className='menu-icon' fontSize='medium'></PinDropIcon>
                                     <span className="menu-title">Areas</span>
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                 </div>

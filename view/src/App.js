@@ -18,7 +18,7 @@ function App() {
             <Route index element={<Navigate to="/calendar" />} />
             <Route path='calendar'>
               <Route index element={<MontlyView />}></Route>
-              <Route path='day/:datth'>
+              <Route path='day/:dayth'>
                 <Route index element={<DayView />}></Route>
                 <Route path='task/:taskId'>
                   <Route index element={<TaskView />}></Route>

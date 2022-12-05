@@ -1,0 +1,5 @@
+function setActive(path, curPath){
+    return curPath == path ? "active" : "";
+}
+
+export default setActive

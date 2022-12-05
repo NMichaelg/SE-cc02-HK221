@@ -14,8 +14,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 
 # Make workdir
-RUN mkdir /ui
-WORKDIR /ui
+RUN mkdir /view
+WORKDIR /view
 COPY package.json .
 COPY package-lock.json .
 
@@ -32,10 +32,5 @@ ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
 
 RUN npm run build
 
-# Stage 2
-FROM nginx:1.17.0-alpine
+CMD npm start
 
-COPY --from=build-stage /ui/build /usr/share/nginx/html
-EXPOSE $REACT_DOCKER_PORT
-
-CMD nginx -g 'daemon off;'

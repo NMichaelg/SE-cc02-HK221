@@ -133,7 +133,7 @@
                     cursor: pointer;
 
                     .menu-row {
-                        text-decoration:none;
+                        text-decoration: none;
                         font-weight: 400;
                         display: flex;
                         flex-direction: row;
@@ -145,9 +145,7 @@
                         transition: background-color 0.5s,
                             color 0.5s;
 
-                        &.active {}
-
-                        &:hover {
+                        &.active {
                             background-color: #b3ff99;
                             // height: 75%;
 
@@ -155,6 +153,20 @@
                             .menu-title {
                                 color: #211e27;
                                 font-weight: 400;
+                            }
+                        }
+
+                        &:hover {
+                            background-color: #3f5139;
+                            // height: 75%;
+
+                            .menu-icon{
+                                color: #319b35;
+                            }
+
+                            .menu-title {
+                                font-size: 18px;
+                                color: #E0EAFF;
                             }
                         }
 
