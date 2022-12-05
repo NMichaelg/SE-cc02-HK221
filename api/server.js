@@ -27,9 +27,8 @@ console.log(__dirname);
 app.get("/", taskController.calendar_page);
 app.get("/home", taskController.calendar_page);
 app.get("/calender", taskController.calendar_page);
-
 // Return multiple task
-app.get("/one-day-multi-task", taskController.one_day)
+app.get("/one-day-multi-task", taskController.one_day);
 app.get("/task-info", taskController.one_day)
 
 // Area
