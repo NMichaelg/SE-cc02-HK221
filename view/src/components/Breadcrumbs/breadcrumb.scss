@@ -1,0 +1,17 @@
+.breadcrumb-container{
+    // background-color: antiquewhite;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    
+    .crumb{
+        text-decoration: none;
+        font-size: 24px;
+        font-family: inherit;
+        font-weight: 700;
+        color: #6d7a6a;
+        display: flex;
+        align-items: center;
+    }
+}

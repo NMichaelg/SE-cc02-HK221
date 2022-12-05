@@ -41,11 +41,11 @@ services:
 
     # command: /api/scripts/pre_start.sh
 
-  ui:
+  view:
     depends_on:
       - api
     build:
-      context: ./ui
+      context: ./view
       args:
         - REACT_APP_API_BASE_URL=$CLIENT_API_BASE_URL
     ports:
@@ -53,8 +53,8 @@ services:
     networks:
       - frontend 
     volumes:
-      - ./ui:/ui
-      - /ui/node_modules
+      - ./view:/view
+      - /view/node_modules
 
     # command: /ui/scripts/pre_start.sh
 
