@@ -1,8 +1,16 @@
 .calendar-container{
-    width: calc(100% - 150px);
-    margin-top: 30px;
-    height: calc(100% - 200px);
+    width: calc(100% - 200px);
+    margin: 30px 0px;
+    height: calc(100% - 150px);
     // background-color: antiquewhite;
 
+    .fc-day-grid-container.fc-scroller {
+        width: 80%;
+        height: 50em !important;
+        overflow-y: auto;
+    }
+}
 
+.fc-today{
+    background-color: aquamarine !important;
 }

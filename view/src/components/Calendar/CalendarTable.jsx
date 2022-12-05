@@ -5,8 +5,8 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import "./calendarTable.scss"
 
-function handleDayClick(){
-  console.log()
+function handleDayClick(Dayinfo){
+  console.log({Dayinfo});
 }
 
 function CalendarTable({ month }) {
@@ -18,8 +18,10 @@ function CalendarTable({ month }) {
         headerToolbar={{
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          right: 'dayGridMonth,timeGridWeek'
         }}
+        height="100%"
+        dateClick={handleDayClick}
       />
     </div>
   )
