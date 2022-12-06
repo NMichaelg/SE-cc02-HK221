@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react'
 import { Card, CardActionArea, CardContent, Typography, Box, Container, Button, List, ListItem, ListItemButton, ListItemText } from "@mui/material"
+import { useLocation } from 'react-router-dom'
 
 const font = 'Jetbrains Mono'
 const fontSize = 15
 const fontWeight = 600
 const t_sx = { fontFamily: 'Inherit', fontSize: 'Inherit' }
 
-function TeamOverView({ team }) {
+function TeamOverView({team, DataToMultipleTeamBody}) {
+    const teamID = team.team_id;
     return (
         <div className="TeamOverView-Item" style={{ padding: "0", margin: "0" }}>
             <Card sx={{ width: "300px", paddingBottom: "15px" }}>
@@ -26,7 +27,7 @@ function TeamOverView({ team }) {
                 <Container sx={{ display: "flex", justifyContent: "center", }}>
                     <Button 
                         sx={{ display: "flex", flex: "1", background: "#FFF859", color: "#000000" }}
-
+                        onClick = {()=>DataToMultipleTeamBody(teamID)}
                     > <Typography sx={{ fontFamily: font, fontSize: fontSize, fontWeight: fontWeight }}>Modify</Typography>
                     </Button>
                 </Container>
