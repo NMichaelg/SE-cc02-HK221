@@ -7,7 +7,11 @@
             "Man",
             "An"
         ],
-        "leader": "Viet Phuong"
+        "leader": "Viet Phuong",
+        "resources": {
+            "trucks": ["Toyota-1", "Toyota-2"],
+            "trollers": ["Toto-1", "Toto-2"]
+        }
     },
 
     {
@@ -18,7 +22,10 @@
             "Genos",
             "King"
         ],
-        "leader": "Saitama"
+        "leader": "Saitama",
+	 "resources": {
+            "trucks": ["Lambogini-1", "Lambogini-2"],
+            "trollers": ["Kiki-1", "Kiki-2"]
     },
 
     {
@@ -29,7 +36,10 @@
             "Loki",
             "Freya"
         ],
-        "leader": "Brok"
+        "leader": "Brok",
+	 "resources": {
+            "trucks": ["Audi-1", "Audi-2"],
+            "trollers": ["Kiki-3", "Kiki-4"]
     },
 
     {
@@ -40,7 +50,10 @@
             "Mai Linh",
             "Riku"
         ],
-        "leader": "DungCT"
+        "leader": "DungCT",
+	 "resources": {
+            "trucks": ["Ferrari-1", "Ferrari-2"],
+            "trollers": ["DUT-1", "DUT-2"]
     }
 
 ]
