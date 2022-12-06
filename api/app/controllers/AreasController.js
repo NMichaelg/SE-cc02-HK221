@@ -10,6 +10,7 @@ class AreasController{
 
         areas_info_object["area-info"] = areas_info;
 
+        res.header("Access-Control-Allow-Origin", "*");
         res.send(areas_info_object);
     }
 }
