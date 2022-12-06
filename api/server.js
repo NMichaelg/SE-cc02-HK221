@@ -5,12 +5,14 @@ const cors = require("cors");
 const taskController = require("./app/controllers/TasksController");
 const VehicleControl = require("./app/controllers/VehicleController");
 const areaController = require("./app/controllers/AreasController");
+const teamController = require("./app/controllers/TeamController");
 
 const app = express();
 
 const port = 6868;
 
 app.use(express.json());
+app.use(cors());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
@@ -40,6 +42,8 @@ app.get("/task-info", taskController.one_day)
 // Area
 app.get("/area-info", areaController.area_info);
 
+// Team
+app.get("/team-info", teamController.team_info);
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
