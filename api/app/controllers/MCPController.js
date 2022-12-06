@@ -8,6 +8,8 @@ var user_list = JSON.parse(fs.readFileSync(db_dir + 'user_info.json'));
 class MCPController{
     MCP_detail(req,res,next){
       var returnObj = JSON.parse(fs.readFileSync(db_dir + 'mcps_info.json'));
+
+      res.header("Access-Control-Allow-Origin", "*");
       res.send(returnObj);
     }
 }

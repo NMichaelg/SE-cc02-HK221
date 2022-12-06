@@ -58,6 +58,8 @@ class VehicleController{
         }
       }
     }
+
+    res.header("Access-Control-Allow-Origin", "*");
     res.send(returnObj);
   }
 }

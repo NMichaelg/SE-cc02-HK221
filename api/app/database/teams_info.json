@@ -23,5 +23,57 @@
             "trucks": ["Lambogini-1", "Lambogini-2"],
             "trollers": ["Kiki-1", "Kiki-2"]
         }
+    },
+
+    {
+        "team_id": 3,
+        "members": [
+            "An1",
+            "Man1"
+        ],
+        "leader": "Saitama1",
+        "resources": {
+            "trucks": ["Lambogini-11", "Lambogini-21"],
+            "trollers": ["Kiki-11", "Kiki-21"]
+        }
+    },
+
+    {
+        "team_id": 4,
+        "members": [
+            "An2",
+            "Man2"
+        ],
+        "leader": "Saitama2",
+        "resources": {
+            "trucks": ["Lambogini-12", "Lambogini-22"],
+            "trollers": ["Kiki-12", "Kiki-22"]
+        }
+    },
+
+    {
+        "team_id": 4,
+        "members": [
+            "An3",
+            "Man3"
+        ],
+        "leader": "Saitama3",
+        "resources": {
+            "trucks": ["Lambogini-13", "Lambogini-23"],
+            "trollers": ["Kiki-13", "Kiki-23"]
+        }
+    },
+
+    {
+        "team_id": 5,
+        "members": [
+            "An4",
+            "Man4"
+        ],
+        "leader": "Saitama4",
+        "resources": {
+            "trucks": ["Lambogini-14", "Lambogini-24"],
+            "trollers": ["Kiki-14", "Kiki-24"]
+        }
     }
 ]

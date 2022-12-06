@@ -62,6 +62,7 @@ class TeamController{
         retObject["resources"] = all_resources_info;
         retObject["employees"] = all_employees_info;
 
+        res.header("Access-Control-Allow-Origin", "*");
         res.send(retObject);
     }
 }
