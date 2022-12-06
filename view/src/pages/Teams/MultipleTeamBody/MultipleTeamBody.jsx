@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from "axios"
+import TeamOverView from './TeamOverView';
 
 function MultipleTeamBody() {
     var [teams, setTeams] = useState([]);
@@ -11,9 +12,16 @@ function MultipleTeamBody() {
                 setTeams(teamList);
             })
     }, [])
-  return (
-    <div>MultipleTeamBody</div>
-  )
+  
+    return (
+        <div className="multipleTeamBody-container">
+            {teams.map(function (team) {
+                return <TeamOverView team={team}></TeamOverView>
+                // console.log("team:",team);
+            })}
+        </div>
+    )
+  
 }
 
 export default MultipleTeamBody
