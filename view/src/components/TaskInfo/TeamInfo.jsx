@@ -7,7 +7,7 @@ const fontSize = 15
 const t_sx = { fontFamily: 'Inherit', fontSize: 'Inherit' };
 function TeamInfo({ team, onClick }) {
     return (
-        <Card sx={{width: 300, borderRadius: 3}}>
+        <Card sx={{width: 300, borderRadius: 3, minWidth:300}}>
             <CardActionArea onClick={onClick}>
                 <CardContent sx={{fontFamily: font, fontSize: fontSize}}>
                     <Typography variant="h5" align="center" sx={{fontFamily: 'Inherit'}}>Team {team.team_id}</Typography>
