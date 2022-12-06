@@ -1,5 +1,5 @@
 import { createContext, useState, useMemo } from "react";
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/system";
 
 //color design tokens
 export const tokens = {
@@ -116,3 +116,19 @@ export const tokens = {
 },
 }
 
+const theme = createTheme({
+    palette:{
+        background:{
+            mainGreen: "#889885",
+            mainGray: "#f8f8f8",
+            mainWhite:"#FFFFFF"
+        },
+        button:{
+            normalRed: "#FF5F5F",
+            normalYellow: "#FFF859",
+            normalGreen: "#A3FF77",
+        }
+    }
+})
+
+export default theme

@@ -8,6 +8,7 @@ const areaController = require("./app/controllers/AreasController");
 const teamController = require("./app/controllers/TeamController");
 
 const app = express();
+app.use(cors());
 
 const port = 6868;
 

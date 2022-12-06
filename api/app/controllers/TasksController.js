@@ -27,6 +27,8 @@ class TasksController{
       output_taskanduser["user_info"] = user_list[0];
       output_taskanduser["all_days_task"] = output_task["all_days_tasks"];
 
+      
+      res.header("Access-Control-Allow-Origin", "*");
       res.send(output_taskanduser);
 
     }
