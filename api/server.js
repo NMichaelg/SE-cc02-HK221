@@ -7,6 +7,7 @@ const VehicleControl = require("./app/controllers/VehicleController");
 const areaController = require("./app/controllers/AreasController");
 
 const app = express();
+app.use(cors());
 
 const port = 6868;
 
