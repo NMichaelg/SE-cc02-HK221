@@ -2,14 +2,18 @@ import React from 'react'
 import SideBar from '../../components/SideBar/SideBar'
 import { Stack, Typography, Paper, List, ListItem, ListItemText, IconButton, Dialog, DialogTitle, Card, CardContent, CardActionArea } from '@mui/material'
 import BuildIcon from '@mui/icons-material/Build';
-import TeamInfo from '../../components/TeamInfo/TeamInfo';
+import TeamInfo from '../../components/TaskInfo/TeamInfo';
 import { useEffect } from 'react';
-import TaskInfoItem from '../../components/TaskInfoItem/TaskInfoItem';
+import TaskInfoItem from '../../components/TaskInfo/TaskInfoItem';
 import EditButton from '../../components/EditButton/EditButton';
+import Box from '@mui/material/Box';
+import FormLabel from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 function TaskView(props) {
-  const [openEditTeam, setOpenEditTeam] = React.useState(false);
-  const [selectedValueEditTeam, setSelectedValueEditTeam] = React.useState('');
   const [task, setTask] = React.useState([undefined])
   const [isLoaded, setIsLoaded] = React.useState(false);
 
@@ -24,7 +28,13 @@ function TaskView(props) {
           setTask(task0)
         },
       )
-  }, [task])
+  }, [])
+
+  const [openEditTeam, setOpenEditTeam] = React.useState(false);
+  const [selectedValueEditTeam, setSelectedValueEditTeam] = React.useState(task.team_id);
+
+  const [openEditArea, setOpenEditArea] = React.useState(false);
+  const [selectedValueEditArea, setSelectedValueEditArea] = React.useState('');
 
 
   const handleClickOpenEditTeam = () => {
@@ -34,7 +44,19 @@ function TaskView(props) {
   const handleCloseEditTeam = (value) => {
     setOpenEditTeam(false);
     setSelectedValueEditTeam(value);
+    console.log("Select Team: " + value);
   };
+
+  const handleClickOpenEditArea = () => {
+    setOpenEditArea(true);
+  };
+
+  const handleCloseEditArea = (value) => {
+    setOpenEditArea(false);
+    setSelectedValueEditArea(value);
+    console.log("Selected MCPs:", value)
+  };
+
   if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
@@ -52,7 +74,7 @@ function TaskView(props) {
               <TaskInfoItem title='Leader' content={task.leader} />
               <TaskInfoItem title='Member' content={task.members.join(", ")} />
               <TaskInfoItem title='Area' content={task.area_info.map((a) => "District " + a.district + ' - Ward ' + a.ward).join(', ')}
-                button={<EditButton onClick={undefined} />}
+                button={<EditButton onClick={handleClickOpenEditArea} />}
               />
               <TaskInfoItem title='MCP' content={task.area_info.map((a) => a.mcps.join(', ')).join(', ')} />
               <TaskInfoItem title='Resources' content={
@@ -75,6 +97,12 @@ function TaskView(props) {
             open={openEditTeam}
             onClose={handleCloseEditTeam}
           />
+          <EditArea
+            selectedValue={selectedValueEditArea}
+            open={openEditArea}
+            onClose={handleCloseEditArea}
+            currentMCPs={[].concat(...task.area_info.map((a) => a.mcps))}
+          />
         </div>
       </div>
     )
@@ -84,13 +112,6 @@ function TaskView(props) {
 function EditTeam(props) {
   const { onClose, selectedValue, open } = props;
 
-  const handleClose = () => {
-    onClose(selectedValue);
-  };
-
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
 
   const [teams, setTeams] = React.useState([]);
   useEffect(() => {
@@ -99,17 +120,73 @@ function EditTeam(props) {
       .then(
         (result) => {
           setTeams(result.team_info)
-        },
-        (error) => { }
+        }
       )
   }, [])
+
+  const handleClose = () => {
+    onClose(selectedValue);
+  };
 
   return (
     <Dialog onClose={handleClose} open={open} maxWidth='md' >
       <DialogTitle sx={{ fontFamily: 'Jetbrains Mono', textAlign: 'center' }}>Select Team</DialogTitle>
       <Stack direction="row" spacing={2} sx={{ p: 2, overflowX: 'scroll' }}>
-        {teams.map((team) => <TeamInfo team={team} />)}
+        {teams.map((team) => <TeamInfo team={team} onClick={() => onClose(team.team_id)} />)}
       </Stack>
+    </Dialog>
+  );
+}
+
+
+function EditArea(props) {
+  const { onClose, selectedValue, open, currentMCPs } = props;
+
+  const handleClose = () => {
+    onClose(mcps);
+  };
+
+  const handleMcpChange = (event) => {
+    setMcps({
+      ...mcps,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
+  const [areas, setAreas] = React.useState([])
+  useEffect(() => {
+    fetch("http://localhost:6868/area-info")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setAreas(result['area-info'])
+        }
+      )
+  }, [])
+
+  const [mcps, setMcps] = React.useState(
+    currentMCPs.reduce((acc,curr)=> (acc[curr]=true,acc),{})
+  );
+
+  return (
+    <Dialog onClose={handleClose} open={open} maxWidth='md' >
+      <DialogTitle sx={{ fontFamily: 'Jetbrains Mono', textAlign: 'center' }}>Select MCPs</DialogTitle>
+      <Box sx={{ display: 'flex' }}>
+        {areas.map((area) =>
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend" sx={{ fontFamily: 'Jetbrains Mono'}}>{area.district + ' - Ward ' + area.ward}</FormLabel>
+            <FormGroup>
+              {area.mcps.map((m) =>
+                <FormControlLabel
+                  control={
+                    <Checkbox checked={mcps[m]} onChange={handleMcpChange} name={m} />
+                  }
+                  label={<Typography sx={{fontFamily: 'Jetbrains Mono'}}>{m}</Typography>}
+                />)}
+            </FormGroup>
+          </FormControl>
+        )}
+      </Box>
     </Dialog>
   );
 }

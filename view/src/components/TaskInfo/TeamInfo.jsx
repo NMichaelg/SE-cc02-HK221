@@ -5,10 +5,10 @@ const font = 'Jetbrains Mono'
 const fontSize = 15
 
 const t_sx = { fontFamily: 'Inherit', fontSize: 'Inherit' };
-function TeamInfo({ team }) {
+function TeamInfo({ team, onClick }) {
     return (
         <Card sx={{width: 300}}>
-            <CardActionArea>
+            <CardActionArea onClick={onClick}>
                 <CardContent sx={{fontFamily: font, fontSize: fontSize}}>
                     <Typography variant="h5" align="center" sx={{fontFamily: 'Inherit'}}>Team {team.team_id}</Typography>
                     <Typography sx={t_sx}><b>Leader:</b> {team.leader}</Typography>
