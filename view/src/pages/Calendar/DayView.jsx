@@ -24,15 +24,15 @@ import DayViewBody from '../../pages/Calendar/DayViewBody'
 function DayView() {
   const [task, setTask] = React.useState([undefined])
   const [isLoaded, setIsLoaded] = React.useState(false);
-
+  
   useEffect(() => {
-    fetch("http://localhost:6868/task-info")
+    fetch("http://localhost:6868/one-day-multi-task")
       .then(res => res.json())
       .then(
         (result) => {
           let all = result.all_tasks_detail
           let task = []
-          for (let i = 0; i < 2; i ++)
+          for (let i = 0; i < all.length; i ++)
           {
             task[i] = all[i]; // check 10 task đầu tiên
           }
@@ -69,6 +69,8 @@ function DayView() {
     setSelectedValueEditArea(value);
     console.log("Selected MCPs:", value)
   };
+
+  // MAIN() to render the page  
 
   if (!isLoaded) {
     return <div>Loading...</div>;
