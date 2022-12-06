@@ -23,6 +23,9 @@ function TaskView() {
   }
 
   let params = useParams();
+  let year = params.dayth.slice(0,4)
+  let month = params.dayth.slice(4,6)
+  let day = params.dayth.slice(6,8)
 
   useEffect(() => {
     fetch("http://localhost:6868/task-info")
@@ -88,7 +91,10 @@ function TaskView() {
       <div className='calendar-task page'>
         <SideBar />
         <div className="content-container">
-          <Paper sx={{ m: 3, boxShadow: 3, borderRadius: "30px" }}>
+          <Typography align='left' variant="h5" sx={{fontFamily: "Jetbrains Mono", width: "90%", mt: 2}}>
+            {day + '-' + month + '-' + year}
+          </Typography>
+          <Paper sx={{ mx: 3, mt: 1, boxShadow: 3, borderRadius: "30px" }}>
             <List>
               <TaskInfoItem title='Duration' content={task.shift.start_time + ' - ' + task.shift.end_time} />
               <TaskInfoItem title='Name' content='Waste Collection' />
@@ -202,7 +208,7 @@ function EditArea(props) {
               {area.mcps.map((m) =>
                 <FormControlLabel
                   control={
-                    <Checkbox checked={mcps[m]} onChange={handleMcpChange} name={m} />
+                    <Checkbox color="success" checked={mcps[m]} onChange={handleMcpChange} name={m} />
                   }
                   label={<Typography sx={{ fontFamily: 'Jetbrains Mono' }}>{m}</Typography>}
                 />)}
