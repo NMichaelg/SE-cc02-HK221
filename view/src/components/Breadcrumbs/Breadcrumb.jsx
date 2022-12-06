@@ -7,12 +7,12 @@ import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
 const routes = [
   { path: "/calendar", breadcrumb: "Month" },
-  { path: "/calendar/day/:dayth", breadcrumb: "Tasks-1-Day" },
+  { path: "/calendar/day/:dayth", breadcrumb: "Tasks-List" },
   { path: "/calendar/day/:dayth/task/:taskId", breadcrumb: "Task"},
-  { path: "/teams", breadcrumb: "Teams" },
+  { path: "/teams", breadcrumb: "Teams-List" },
   { path: "/teams/:teamId", breadcrumb: "Team" },
-  { path: "/resources", breadcrumb: "Resources" },
-  { path: "/areas", breadcrumb: "Areas"}
+  { path: "/resources", breadcrumb: "Resources-List" },
+  { path: "/areas", breadcrumb: "Areas-List"}
 ];
 
 function setActive(path, curPath){

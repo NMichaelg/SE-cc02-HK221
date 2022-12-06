@@ -3,7 +3,9 @@
         "team_id": 1,
         "members": [
             "Khoa Pham",
-            "Phuoc"
+            "Phuoc",
+            "Man",
+            "An"
         ],
         "leader": "Viet Phuong"
     },
@@ -12,8 +14,33 @@
         "team_id": 2,
         "members": [
             "An",
-            "Man"
+            "Man",
+            "Genos",
+            "King"
         ],
         "leader": "Saitama"
+    },
+
+    {
+        "team_id": 3,
+        "members": [
+            "Kratos",
+            "Mimir",
+            "Loki",
+            "Freya"
+        ],
+        "leader": "Brok"
+    },
+
+    {
+        "team_id": 4,
+        "members": [
+            "Dat",
+            "Vu",
+            "Mai Linh",
+            "Riku"
+        ],
+        "leader": "DungCT"
     }
+
 ]

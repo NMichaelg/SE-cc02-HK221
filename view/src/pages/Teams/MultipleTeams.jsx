@@ -3,6 +3,7 @@ import SideBar from '../../components/SideBar/SideBar'
 import Header from '../../components/Header/Header'
 import "../../assets/styles/page.scss"
 import "../../assets/styles/utilities.scss"
+import MultpleTeamsBody from './MultipleTeamsBody/MultpleTeamsBody'
 
 
 function MultipleTeams() {
@@ -12,7 +13,7 @@ function MultipleTeams() {
             <div className="content-container">
                 <Header></Header>
                 <span className="divider"><hr /></span>
-                
+                <MultpleTeamsBody></MultpleTeamsBody>
             </div>
         </div>
     )
