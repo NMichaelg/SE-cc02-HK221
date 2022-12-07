@@ -20,7 +20,7 @@ function MultipleTeamBody() {
         axios.get("http://localhost:6868/team-info")
             .then(function (teamDataRes) {
                 var teamList = teamDataRes.data.team_info;
-                console.log({teamList});
+                // console.log({teamList});
                 setTeams(teamList);
             })
     }, [])
