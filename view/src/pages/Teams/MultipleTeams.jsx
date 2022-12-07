@@ -6,6 +6,8 @@ import "../../assets/styles/utilities.scss"
 import MultipleTeamBody from './MultipleTeamBody/MultipleTeamBody'
 
 function MultipleTeams() {
+
+
     return (
         <div className='teams page'>
             <SideBar />

@@ -1,7 +1,8 @@
 .page {
     display: flex;
     flex-direction: row;
-    height: 1000px;
+    // overflow: scroll;
+    height: 3000px;
 
     .content-container {
         flex: 1;
