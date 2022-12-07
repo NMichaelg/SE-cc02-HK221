@@ -60,6 +60,8 @@ class VehicleController{
     }
 
     res.header("Access-Control-Allow-Origin", "*");
+    returnObj["truck_url"] = "https://ibb.co/4jQctmK";
+    returnObj["troller_url"] = "https://ibb.co/r06wnwq";
     res.send(returnObj);
   }
 }
