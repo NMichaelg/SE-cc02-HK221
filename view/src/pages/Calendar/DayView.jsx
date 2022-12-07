@@ -32,8 +32,7 @@ function DayView() {
         (result) => {
           let all = result.all_tasks_detail
           let task = []
-          for (let i = 0; i < 2; i ++)
-          {
+          for (let i = 0; i < 2; i++) {
             task[i] = all[i]; // check 10 task đầu tiên
           }
           // task0 = task[0]
@@ -71,18 +70,23 @@ function DayView() {
   };
 
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (
+      <div className='calendar-daily page'>
+        <SideBar />
+        <div className="content-container">Loading...</div>
+      </div>
+    );
   } else {
     return (
       <div className='calendar-daily page'>
-          <SideBar/>
-          <div className="content-container">
-            <Header/>
-            <span className="divider"><hr /></span>
-           
-            <DayViewBody task={task}/>
+        <SideBar />
+        <div className="content-container">
+          <Header />
+          <span className="divider"><hr /></span>
 
-          </div>
+          <DayViewBody task={task} />
+
+        </div>
       </div>
     )
   }
@@ -144,7 +148,7 @@ function EditArea(props) {
   }, [])
 
   const [mcps, setMcps] = React.useState(
-    currentMCPs.reduce((acc,curr)=> (acc[curr]=true,acc),{})
+    currentMCPs.reduce((acc, curr) => (acc[curr] = true, acc), {})
   );
 
   return (
@@ -153,14 +157,14 @@ function EditArea(props) {
       <Box sx={{ display: 'flex' }}>
         {areas.map((area) =>
           <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend" sx={{ fontFamily: 'Jetbrains Mono'}}>{area.district + ' - Ward ' + area.ward}</FormLabel>
+            <FormLabel component="legend" sx={{ fontFamily: 'Jetbrains Mono' }}>{area.district + ' - Ward ' + area.ward}</FormLabel>
             <FormGroup>
               {area.mcps.map((m) =>
                 <FormControlLabel
                   control={
                     <Checkbox checked={mcps[m]} onChange={handleMcpChange} name={m} />
                   }
-                  label={<Typography sx={{fontFamily: 'Jetbrains Mono'}}>{m}</Typography>}
+                  label={<Typography sx={{ fontFamily: 'Jetbrains Mono' }}>{m}</Typography>}
                 />)}
             </FormGroup>
           </FormControl>

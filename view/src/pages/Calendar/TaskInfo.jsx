@@ -11,12 +11,17 @@ import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { useNavigate, useLocation } from "react-router-dom";
+
 
 const font = 'Jetbrains Mono'
 const fontSize = 15
 
 const t_sx = { fontFamily: 'Inherit', fontSize: 'Inherit' };
 function TaskInfo({ task }) {
+    const navigate = useNavigate();
+    const curPath = useLocation();
+
     return (
         <div className="TaskInfo-Item">
             <Card sx={{width: 300}}>
@@ -27,13 +32,14 @@ function TaskInfo({ task }) {
                     <Typography sx={t_sx}><b>Leader:</b> {task.leader}</Typography>
                     <TaskInfoItem title='Shift' content={task.shift.start_time + ' - ' + task.shift.end_time} />
                 </CardContent>
-                <CardActionArea sx={{ m: 0, display:"flex" }}>
+                <Box sx={{ m: 0, display:"flex" }}>
                     <Button sx={{ display: "flex", flex:"1", background:"#ff5f5f" }}> <Typography sx={{color: "#000000" }}>Delete</Typography> </Button>
-                    <Button sx={{ display: "flex", flex:"1", background:"#edd500" }}> <Typography sx={{color: "#000000" }}>Modify</Typography> </Button>
-                </CardActionArea>  
+                    <Button sx={{ display: "flex", flex:"1", background:"#edd500" }} onClick={() => navigate(curPath.pathname.concat("/task/", task.team_id))}> <Typography sx={{color: "#000000" }}>Modify</Typography> </Button>
+                </Box>  
             </Card>
         </div>
     )
 }
+
 
 export default TaskInfo

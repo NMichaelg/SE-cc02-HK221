@@ -1,7 +1,6 @@
 import React from 'react'
 import SideBar from '../../components/SideBar/SideBar'
-import { Stack, Typography, Paper, List, ListItem, ListItemText, IconButton, Dialog, DialogTitle, Card, CardContent, CardActionArea } from '@mui/material'
-import BuildIcon from '@mui/icons-material/Build';
+import {Stack, Typography, Paper, List, Dialog, DialogTitle } from '@mui/material'
 import TeamInfo from '../../components/TaskInfo/TeamInfo';
 import { useEffect } from 'react';
 import TaskInfoItem from '../../components/TaskInfo/TaskInfoItem';
@@ -12,10 +11,22 @@ import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { useParams } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
-function TaskView(props) {
-  const [task, setTask] = React.useState([undefined])
+function TaskView() {
+  const [task, setTask] = React.useState('')
   const [isLoaded, setIsLoaded] = React.useState(false);
+  const [toggle, setToggle] = React.useState(false);
+
+  function refetch() {
+    setToggle(prevState => !prevState);
+  }
+
+  let params = useParams();
+  // let year = params.dayth.slice(0,4)
+  // let month = params.dayth.slice(4,6)
+  // let day = params.dayth.slice(6,8)
 
   useEffect(() => {
     fetch("http://localhost:6868/task-info")
@@ -23,12 +34,13 @@ function TaskView(props) {
       .then(
         (result) => {
           let all = result.all_tasks_detail
-          let task0 = all[0] // check tạm task đầu tiên
+          let task = all[params.taskId - 1]
+          setTask(task)
           setIsLoaded(true);
-          setTask(task0)
         },
       )
-  }, [])
+  }, [toggle])
+
 
   const [openEditTeam, setOpenEditTeam] = React.useState(false);
   const [selectedValueEditTeam, setSelectedValueEditTeam] = React.useState(task.team_id);
@@ -45,6 +57,7 @@ function TaskView(props) {
     setOpenEditTeam(false);
     setSelectedValueEditTeam(value);
     console.log("Select Team: " + value);
+    refetch();
   };
 
   const handleClickOpenEditArea = () => {
@@ -54,17 +67,37 @@ function TaskView(props) {
   const handleCloseEditArea = (value) => {
     setOpenEditArea(false);
     setSelectedValueEditArea(value);
-    console.log("Selected MCPs:", value)
+    console.log("Selected MCPs:", value);
+    refetch();
   };
 
+  const [openAlert, setOpenAlert] = React.useState(false);
+  const handleCloseAlert = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenAlert(false);
+  }
+
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (
+      <div className='calendar-task page'>
+        <SideBar />
+        <div className="content-container">Loading...</div>
+      </div>
+    );
   } else {
     return (
       <div className='calendar-task page'>
         <SideBar />
         <div className="content-container">
-          <Paper sx={{ m: 3, boxShadow: 3, borderRadius: "30px" }}>
+          <Header/>
+          <span className="divider"><hr /></span>
+          {/* <Typography align='left' variant="h5" sx={{fontFamily: "Jetbrains Mono", width: "90%", mt: 2}}>
+            {day + '-' + month + '-' + year}
+          </Typography> */}
+          <Paper sx={{ mx: 3, mt: 1, boxShadow: 3, borderRadius: "30px" }}>
             <List>
               <TaskInfoItem title='Duration' content={task.shift.start_time + ' - ' + task.shift.end_time} />
               <TaskInfoItem title='Name' content='Waste Collection' />
@@ -111,7 +144,6 @@ function TaskView(props) {
 
 function EditTeam(props) {
   const { onClose, selectedValue, open } = props;
-
 
   const [teams, setTeams] = React.useState([]);
   useEffect(() => {
@@ -165,7 +197,7 @@ function EditArea(props) {
   }, [])
 
   const [mcps, setMcps] = React.useState(
-    currentMCPs.reduce((acc,curr)=> (acc[curr]=true,acc),{})
+    currentMCPs.reduce((acc, curr) => (acc[curr] = true, acc), {})
   );
 
   return (
@@ -174,14 +206,14 @@ function EditArea(props) {
       <Box sx={{ display: 'flex' }}>
         {areas.map((area) =>
           <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend" sx={{ fontFamily: 'Jetbrains Mono'}}>{area.district + ' - Ward ' + area.ward}</FormLabel>
+            <FormLabel component="legend" sx={{ fontFamily: 'Jetbrains Mono' }}>{area.district + ' - Ward ' + area.ward}</FormLabel>
             <FormGroup>
               {area.mcps.map((m) =>
                 <FormControlLabel
                   control={
-                    <Checkbox checked={mcps[m]} onChange={handleMcpChange} name={m} />
+                    <Checkbox color="success" checked={mcps[m]} onChange={handleMcpChange} name={m} />
                   }
-                  label={<Typography sx={{fontFamily: 'Jetbrains Mono'}}>{m}</Typography>}
+                  label={<Typography sx={{ fontFamily: 'Jetbrains Mono' }}>{m}</Typography>}
                 />)}
             </FormGroup>
           </FormControl>

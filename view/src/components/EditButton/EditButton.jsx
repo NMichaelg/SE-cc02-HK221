@@ -4,7 +4,7 @@ import BuildIcon from '@mui/icons-material/Build';
 
 function EditButton({ onClick }) {
     return (
-        <IconButton size="small" color="primary"
+        <IconButton size="small" color="success"
             sx={{ ml: 2 }} onClick={onClick}>
             <BuildIcon />
         </IconButton>
