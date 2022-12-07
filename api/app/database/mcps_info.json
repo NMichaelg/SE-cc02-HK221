@@ -1,26 +1,44 @@
 [
     {
         "name": "TB1",
-        "capacity": 0.6
+        "capacity": 0.6,
+        "district": "Tân Bình",
+        "ward": "15",
+        "street": "60 Trần Thái Tông"
     },
     {
         "name": "TB2",
-        "capacity": 0.3
+        "capacity": 0.3,
+        "district": "Tân Bình",
+        "ward": "15",
+        "street": "69 Trường Chinh"
     },
     {
         "name": "TB3",
-        "capacity": 0.8
+        "capacity": 0.8,
+        "district": "Tân Bình",
+        "ward": "15",
+        "street": "20 Cống lỡ"
     },
     {
         "name": "PN1",
-        "capacity": 0.1
+        "capacity": 0.1,
+        "district": "Phú Nhuận",
+        "ward": "2",
+        "street": "57 Phan Xích Long"
     },
     {
         "name": "PN2",
-        "capacity": 0.8
+        "capacity": 0.8,
+        "district": "Phú Nhuận",
+        "ward": "2",
+        "street": "99 Phan Xích Long"
     },
     {
         "name": "PN3",
-        "capacity": 0.2
+        "capacity": 0.2,
+        "district": "Phú Nhuận",
+        "ward": "2",
+        "street": "200 Phan Xích Long"
     }
 ]
