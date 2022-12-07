@@ -1,6 +1,6 @@
 import React from 'react'
 import SideBar from '../../components/SideBar/SideBar'
-import {Stack, Typography, Paper, List, Dialog, DialogTitle } from '@mui/material'
+import { Stack, Typography, Paper, List, Dialog, DialogTitle } from '@mui/material'
 import TeamInfo from '../../components/TaskInfo/TeamInfo';
 import { useEffect } from 'react';
 import TaskInfoItem from '../../components/TaskInfo/TaskInfoItem';
@@ -13,6 +13,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import  { IconButton} from '@mui/material';
 
 function TaskView() {
   const [task, setTask] = React.useState('')
@@ -48,6 +50,15 @@ function TaskView() {
   const [openEditArea, setOpenEditArea] = React.useState(false);
   const [selectedValueEditArea, setSelectedValueEditArea] = React.useState('');
 
+  const [openRoute, setOpenRoute] = React.useState(false);
+
+  const handleCloseRoute = () => {
+    setOpenRoute(false);
+  };
+
+  const handleClickOpenRoute = () => {
+    setOpenRoute(true);
+  };
 
   const handleClickOpenEditTeam = () => {
     setOpenEditTeam(true);
@@ -92,7 +103,7 @@ function TaskView() {
       <div className='calendar-task page'>
         <SideBar />
         <div className="content-container">
-          <Header/>
+          <Header />
           <span className="divider"><hr /></span>
           {/* <Typography align='left' variant="h5" sx={{fontFamily: "Jetbrains Mono", width: "90%", mt: 2}}>
             {day + '-' + month + '-' + year}
@@ -122,7 +133,10 @@ function TaskView() {
               remaining Members to complete the work. Try to complete the
               work within the specified Time.'
               />
-              <TaskInfoItem title='Route' content='' />
+              <TaskInfoItem title='Route' content='' button={<IconButton size="small" color="success"
+                sx={{ ml: 2 }} onClick={handleClickOpenRoute}>
+                <VisibilityIcon />
+              </IconButton>}/>
             </List>
           </Paper>
           <EditTeam
@@ -135,6 +149,10 @@ function TaskView() {
             open={openEditArea}
             onClose={handleCloseEditArea}
             currentMCPs={[].concat(...task.area_info.map((a) => a.mcps))}
+          />
+          <Route
+            open={openRoute}
+            onClose={handleCloseRoute}
           />
         </div>
       </div>
@@ -221,6 +239,15 @@ function EditArea(props) {
       </Box>
     </Dialog>
   );
+}
+
+function Route(props) {
+  const { onClose, open } = props;
+  return (
+    <Dialog onClose={onClose} open={open}>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d35703.166307277475!2d106.64545587442738!3d10.812439127078848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x317528ce1f67f6eb%3A0xcdd14e51b3c57d0b!2zcGjGsOG7nW5nIDIsIFBow7ogTmh14bqtbiwgSG8gQ2hpIE1pbmggQ2l0eQ!3m2!1d10.797344299999999!2d106.68734699999999!4m5!1s0x3175291336d914e9%3A0xa4d13ad8a757e782!2zUGjGsOG7nW5nIDE1LCBUw6JuIELDrG5oLCBIbyBDaGkgTWluaCBDaXR5LCBWaWV0bmFt!3m2!1d10.8225398!2d106.6379724!5e0!3m2!1sen!2s!4v1670396976848!5m2!1sen!2s" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </Dialog>
+  )
 }
 
 
