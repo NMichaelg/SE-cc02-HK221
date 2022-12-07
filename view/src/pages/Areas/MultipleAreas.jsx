@@ -55,9 +55,9 @@ function MultipleAreas() {
           <Grid container spacing={4} sx={{ p: 3 }}>
             {areas.map((area) =>
               <Grid item>
-                <Card sx={{ boxShadow: 3}}>
+                <Card sx={{ boxShadow: 3, padding: "7px"}}>
                   <CardActionArea sx={{p: 1}}>
-                    <Typography sx={{ fontFamily: 'Jetbrains Mono', backgroundColor: '#6fc960', borderRadius: 2, p: "3px", mb: 1 }} variant='h5'>{area.district + ' - Ward ' + area.ward}</Typography>
+                    <Typography sx={{ fontFamily: 'Jetbrains Mono', backgroundColor: '#A3FF77', borderRadius: 2, p: "3px", mb: 1}} variant='h5'>{area.district + ' - Ward ' + area.ward}</Typography>
                     {area.mcps.map((m) =>
                       <Typography sx={{ fontFamily: 'Jetbrains Mono' }}>MCP: {m} - {findCapacity(m)}</Typography>
                     )}
