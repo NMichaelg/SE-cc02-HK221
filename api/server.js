@@ -13,6 +13,7 @@ app.use(cors());
 const port = 6868;
 
 app.use(express.json());
+app.use(cors());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
@@ -44,6 +45,9 @@ app.get("/area-info", areaController.area_info);
 
 // Team
 app.get("/team-info", teamController.team_info);
+
+// MCPs
+app.get("/MCP-detail", MCPController.MCP_detail);
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 

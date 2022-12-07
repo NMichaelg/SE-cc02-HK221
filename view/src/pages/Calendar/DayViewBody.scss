@@ -1,0 +1,10 @@
+.DayViewBody-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 30px;
+    width: calc(100% - 100px);
+    // background-color: aquamarine;    
+    column-gap: auto;
+    justify-items: center;
+    row-gap: 50px;
+}
