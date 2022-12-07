@@ -156,6 +156,170 @@
                     ]
                 }
             ]
+        },
+        {
+            "date": "14/12/2022",
+            "all_tasks_detail":  [
+                {
+                    "team_id": 3,
+                    "members": [
+                        "An1",
+                        "Man1"
+                    ],
+                    "leader": "Saitama1",
+                    "resources": {
+                        "trucks": ["Lambogini-11", "Lambogini-21"],
+                        "trollers": ["Kiki-11", "Kiki-21"]
+                    },
+                    "shift":{
+                        "start_time": "18:30:00",
+                        "end_time": "21:00:00"
+                    },
+                    "area_info":[
+                        {
+                            "district": "Tân Bình",
+                            "ward": "15",
+                            "mcps": [
+                                "TB1",
+                                "TB2",
+                                "TB3"
+                            ]
+                        },
+                        {
+                            "district": "Phú Nhuận",
+                            "ward": "2",
+                            "mcps": [
+                                "PN1",
+                                "PN2",
+                                "PN3"
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "team_id": 4,
+                    "members": [
+                        "An2",
+                        "Man2"
+                    ],
+                    "leader": "Saitama2",
+                    "resources": {
+                        "trucks": ["Lambogini-12", "Lambogini-22"],
+                        "trollers": ["Kiki-12", "Kiki-22"]
+                    },
+                    "shift":{
+                        "start_time": "21:30:00",
+                        "end_time": "01:00:00"
+                    },
+                    "resources": {
+                        "trucks": ["Lambogini-1", "Lambogini-2"],
+                        "trollers": ["Kiki-1", "Kiki-2"]
+                    },
+                    "area_info":[
+                        {
+                            "district": "Tân Bình",
+                            "ward": "15",
+                            "mcps": [
+                                "TB1",
+                                "TB2",
+                                "TB3"
+                            ]
+                        },
+                        {
+                            "district": "Phú Nhuận",
+                            "ward": "2",
+                            "mcps": [
+                                "PN1",
+                                "PN2",
+                                "PN3"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "15/12/2022",
+            "all_tasks_detail":  [
+                {
+                    "team_id": 3,
+                    "members": [
+                        "An1",
+                        "Man1"
+                    ],
+                    "leader": "Saitama1",
+                    "resources": {
+                        "trucks": ["Lambogini-11", "Lambogini-21"],
+                        "trollers": ["Kiki-11", "Kiki-21"]
+                    },
+                    "shift":{
+                        "start_time": "18:30:00",
+                        "end_time": "21:00:00"
+                    },
+                    "area_info":[
+                        {
+                            "district": "Tân Bình",
+                            "ward": "15",
+                            "mcps": [
+                                "TB1",
+                                "TB2",
+                                "TB3"
+                            ]
+                        },
+                        {
+                            "district": "Phú Nhuận",
+                            "ward": "2",
+                            "mcps": [
+                                "PN1",
+                                "PN2",
+                                "PN3"
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    "team_id": 4,
+                    "members": [
+                        "An2",
+                        "Man2"
+                    ],
+                    "leader": "Saitama2",
+                    "resources": {
+                        "trucks": ["Lambogini-12", "Lambogini-22"],
+                        "trollers": ["Kiki-12", "Kiki-22"]
+                    },
+                    "shift":{
+                        "start_time": "21:30:00",
+                        "end_time": "01:00:00"
+                    },
+                    "resources": {
+                        "trucks": ["Lambogini-1", "Lambogini-2"],
+                        "trollers": ["Kiki-1", "Kiki-2"]
+                    },
+                    "area_info":[
+                        {
+                            "district": "Tân Bình",
+                            "ward": "15",
+                            "mcps": [
+                                "TB1",
+                                "TB2",
+                                "TB3"
+                            ]
+                        },
+                        {
+                            "district": "Phú Nhuận",
+                            "ward": "2",
+                            "mcps": [
+                                "PN1",
+                                "PN2",
+                                "PN3"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
