@@ -12,6 +12,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { useParams } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
 function TaskView() {
   const [task, setTask] = React.useState('')
@@ -23,9 +24,9 @@ function TaskView() {
   }
 
   let params = useParams();
-  let year = params.dayth.slice(0,4)
-  let month = params.dayth.slice(4,6)
-  let day = params.dayth.slice(6,8)
+  // let year = params.dayth.slice(0,4)
+  // let month = params.dayth.slice(4,6)
+  // let day = params.dayth.slice(6,8)
 
   useEffect(() => {
     fetch("http://localhost:6868/task-info")
@@ -91,9 +92,11 @@ function TaskView() {
       <div className='calendar-task page'>
         <SideBar />
         <div className="content-container">
-          <Typography align='left' variant="h5" sx={{fontFamily: "Jetbrains Mono", width: "90%", mt: 2}}>
+          <Header/>
+          <span className="divider"><hr /></span>
+          {/* <Typography align='left' variant="h5" sx={{fontFamily: "Jetbrains Mono", width: "90%", mt: 2}}>
             {day + '-' + month + '-' + year}
-          </Typography>
+          </Typography> */}
           <Paper sx={{ mx: 3, mt: 1, boxShadow: 3, borderRadius: "30px" }}>
             <List>
               <TaskInfoItem title='Duration' content={task.shift.start_time + ' - ' + task.shift.end_time} />
