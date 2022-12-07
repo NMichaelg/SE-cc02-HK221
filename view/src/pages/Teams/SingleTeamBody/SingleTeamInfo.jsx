@@ -1,11 +1,16 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import { Paper, List, Grid } from "@mui/material"
 import TeamInfoItem from './TeamInfoItem'
+import EditButton from '../../../components/EditButton/EditButton'
 
 function SingleTeamInfo({ teamInfo }) {
     console.log("SingleTeamInfo", teamInfo)
+    // useEffect(function(){
+    //     setSingleTeam(teamInfo);
+    // },[])
+
     return (
-        <Grid>
+        // <div className="e">heelo</div>
         <Paper sx={{ mx: 3, mt: 5, boxShadow: 3, borderRadius: "30px" }}>
             <List>
                 <TeamInfoItem title='Team ID:' content={teamInfo.team_id} />
@@ -27,13 +32,11 @@ function SingleTeamInfo({ teamInfo }) {
                 />
             </List>
         </Paper>
-        </Grid>
     )
 }
 
 export default SingleTeamInfo
 
-function EditButton() { }
 function handleClickOpenEditLeader() { }
 function handleClickOpenEditResources() {}
 function handleClickOpenEditMember() {}
