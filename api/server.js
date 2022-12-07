@@ -13,6 +13,7 @@ app.use(cors());
 const port = 6868;
 
 app.use(express.json());
+app.use(cors());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
