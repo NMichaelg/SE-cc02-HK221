@@ -254,12 +254,11 @@ This repository contains the source code developed by the project team as part o
 
 Contributors:
 
-* Add team member 1
-* Add team member 2
-* Add team member 3
-* Add team member 4
-
-> Replace the placeholders above with the actual team members and, if required by the course, their respective responsibilities.
+* [VideySora](https://github.com/VideySora)
+* [Bao An Nguyen Minh ](https://github.com/NMichaelg)
+* [Khoa Pham](https://github.com/khoaphamce)
+* [Man Hong Huy ](https://github.com/honghuyman)
+* [Viet Phuong Nguyen](https://github.com/vietphuon)
 
 ## Branching
 
