@@ -46,6 +46,9 @@ app.get("/area-info", areaController.area_info);
 // Team
 app.get("/team-info", teamController.team_info);
 
+// MCPs
+app.get("/MCP-detail", MCPController.MCP_detail);
+
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
 app.listen(PORT, () => {
